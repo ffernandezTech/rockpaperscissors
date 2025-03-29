@@ -1,5 +1,9 @@
 // console.log('Hello World');
 
+ // keep track of the score both each player
+ let humanScore=0, computerScore=0;
+
+ 
 function getComputerChoice(){
 
     //Get a randomNum between 1-300. Because of 0 we add 1 so it's 1-300. Instead of 0-299(I think)
@@ -44,14 +48,7 @@ function getComputerChoice(){
         return(userInput.toUpperCase());
     
     }
-    // keep track of the score both each player
-    let humanScore=0, computerScore=0;
-    
-    
-    
-    
-    
-    
+
     
     // console.log(getComputerChoice());
     // console.log(getHumanChoice());
@@ -60,22 +57,26 @@ function getComputerChoice(){
     
     
     function playround(humanChoice, computerChoice){
-        // if(humanChoice == computerChoice)
-        // {
-        //     console.log('test');
-        //     console.log(`${humanChoice} vs ${computerChoice} is a draw!`);
-        // }
-        // else{
-        //     console.log('test else');
-        // }
+
+        // console.log(`${humanChoice} human and this is computer ${computerChoice}`);
+        if(humanChoice == computerChoice)
+        {
+            console.log('test');
+            console.log(`${humanChoice} vs ${computerChoice} is a draw!`);
+        }
+        else{
+            // console.log('test else');
+        }
         
     
-        // console.log('in playround function');
+        console.log('in playround function');
     
     }
     
     
-    
+    //Creating a variable and calling our function to give it a value. 
+    // Then displaying that value to make sure its a desired value for our play function
+    // console.log would be comment out after testing
     const computerSelection = getComputerChoice();
     console.log(computerSelection);
     
@@ -84,4 +85,4 @@ function getComputerChoice(){
     console.log(humanSelection);
     
     
-    playround(humanSelection,computerScore);
+    playround(humanSelection,computerSelection);
