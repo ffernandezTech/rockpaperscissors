@@ -1,8 +1,8 @@
 // console.log('Hello World');
 
- // keep track of the score both each player
- let humanScore=0, computerScore=0;
-
+// keep track of the score both each player
+//declared these variables here so that every function that needs them can use them
+let humanScore=0, computerScore=0;
  
 function getComputerChoice(){
 
@@ -103,7 +103,14 @@ function getComputerChoice(){
     }
     
     
-    //Creating a variable and calling our function to give it a value. 
+    
+
+   function playGame(){
+
+
+    
+
+//Creating a variable and calling our function to give it a value. 
     // Then displaying that value to make sure its a desired value for our play function
     // console.log would be comment out after testing
     const computerSelection = getComputerChoice();
@@ -113,6 +120,20 @@ function getComputerChoice(){
     const humanSelection = getHumanChoice();
     console.log(humanSelection);
     
-    
+   
     playround(humanSelection,computerSelection);
     console.log(`Total score: human's ${humanScore} vs computer's ${computerScore}`);
+
+    
+
+
+   }
+
+
+playGame();
+playGame();
+playGame();
+playGame();
+playGame();
+
+    
