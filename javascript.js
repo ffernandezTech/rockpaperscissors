@@ -59,17 +59,46 @@ function getComputerChoice(){
     function playround(humanChoice, computerChoice){
 
         // console.log(`${humanChoice} human and this is computer ${computerChoice}`);
-        if(humanChoice == computerChoice)
+        if(humanChoice === computerChoice)
         {
-            console.log('test');
+            // console.log('test');
             console.log(`${humanChoice} vs ${computerChoice} is a draw!`);
         }
-        else{
-            // console.log('test else');
+        else if(humanChoice==='ROCK' && computerChoice==='PAPER')
+        {
+            console.log(`${humanChoice} does NOT beats ${computerChoice}`);
+            computerScore++;
         }
-        
+        else if(humanChoice==='ROCK' && computerChoice==='SCISSOR')
+        {
+            console.log(`${humanChoice} beats ${computerChoice}`);
+            humanScore++;
+        }
+        else if(humanChoice==='PAPER' && computerChoice==='ROCK')
+        {
+            console.log(`${humanChoice} beats ${computerChoice}`);
+            humanScore++;
+        }
+        else if(humanChoice==='PAPER' && computerChoice==='SCISSOR')
+        {
+            
+            console.log(`${humanChoice} does NOT beats ${computerChoice}`);
+            computerScore++;
+        }
+        else if(humanChoice==='SCISSOR' && computerChoice==='PAPER')
+        {
+            console.log(`${humanChoice} beats ${computerChoice}`);
+            humanScore++;
+        }
+        else if(humanChoice==='SCISSOR' && computerChoice==='ROCK')
+        {
+            
+            console.log(`${humanChoice} does NOT beats ${computerChoice}`);
+            computerScore++;
+        }
     
-        console.log('in playround function');
+    
+        // console.log('in playround function');
     
     }
     
@@ -86,3 +115,4 @@ function getComputerChoice(){
     
     
     playround(humanSelection,computerSelection);
+    console.log(`Total score: human's ${humanScore} vs computer's ${computerScore}`);
