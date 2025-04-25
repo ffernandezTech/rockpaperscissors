@@ -64,65 +64,40 @@ function getComputerChoice(){
             // console.log('test');
             console.log(`${humanChoice} vs ${computerChoice} is a draw!`);
         }
-        // else if(humanChoice==='ROCK' && computerChoice==='PAPER')
-        // {
-        //     console.log(`${humanChoice} does NOT beats ${computerChoice}`);
-        //     computerScore++;
-        // }
-        // else if(humanChoice==='ROCK' && computerChoice==='SCISSOR')
-        // {
-        //     console.log(`${humanChoice} beats ${computerChoice}`);
-        //     humanScore++;
-        // }
-        // else if(humanChoice==='PAPER' && computerChoice==='ROCK')
-        // {
-        //     console.log(`${humanChoice} beats ${computerChoice}`);
-        //     humanScore++;
-        // }
-        // else if(humanChoice==='PAPER' && computerChoice==='SCISSOR')
-        // {
-            
-        //     console.log(`${humanChoice} does NOT beats ${computerChoice}`);
-        //     computerScore++;
-        // }
-        // else if(humanChoice==='SCISSOR' && computerChoice==='PAPER')
-        // {
-        //     console.log(`${humanChoice} beats ${computerChoice}`);
-        //     humanScore++;
-        // }
-        // else if(humanChoice==='SCISSOR' && computerChoice==='ROCK')
-        // {
-            
-        //     console.log(`${humanChoice} does NOT beats ${computerChoice}`);
-        //     computerScore++;
-        // }
-
-        else{
-
-            switch(humanChoice)
-            {
-            //In the case of Human Choice being this value, check if computer Choice is this value. If true console log the first one else console log the second one.
-            //First console log is if the Human won and the second if they lost. 
-              case('ROCK'): (computerChoice==='SCISSOR')?console.log(`${humanChoice} beats ${computerChoice}`):
-              console.log(`${humanChoice} does NOT beats ${computerChoice}`);
-              humanScore++;
-
-              console.log(`checking for rock ${humanScore} ` );
-              break;
-    
-              case('PAPER'):(computerChoice==='ROCK')?console.log(`${humanChoice} beats ${computerChoice}`):
-              console.log(`${humanChoice} does NOT beats ${computerChoice}`);
-              humanChoice++;
-              break;
-    
-              case('SCISSOR'):(computerChoice==='PAPER')?console.log(`${humanChoice} beats ${computerChoice}`):
-              console.log(`${humanChoice} does NOT beats ${computerChoice}`);
-              humanChoice++;
-              break;
-    
-            }
+        else if(humanChoice==='ROCK' && computerChoice==='PAPER')
+        {
+            console.log(`${humanChoice} does NOT beats ${computerChoice}`);
+            computerScore++;
         }
-    
+        else if(humanChoice==='ROCK' && computerChoice==='SCISSOR')
+        {
+            console.log(`${humanChoice} beats ${computerChoice}`);
+            humanScore++;
+        }
+        else if(humanChoice==='PAPER' && computerChoice==='ROCK')
+        {
+            console.log(`${humanChoice} beats ${computerChoice}`);
+            humanScore++;
+        }
+        else if(humanChoice==='PAPER' && computerChoice==='SCISSOR')
+        {
+            
+            console.log(`${humanChoice} does NOT beats ${computerChoice}`);
+            computerScore++;
+        }
+        else if(humanChoice==='SCISSOR' && computerChoice==='PAPER')
+        {
+            console.log(`${humanChoice} beats ${computerChoice}`);
+            humanScore++;
+        }
+        else if(humanChoice==='SCISSOR' && computerChoice==='ROCK')
+        {
+            
+            console.log(`${humanChoice} does NOT beats ${computerChoice}`);
+            computerScore++;
+        }
+
+
     
        
        
@@ -147,10 +122,15 @@ function getComputerChoice(){
     console.log(computerSelection);
     
     
-    const humanSelection = getHumanChoice();
-    console.log(humanSelection);
+    // const humanSelection = getHumanChoice();
+    // console.log(humanSelection);
     
    
+
+
+
+
+    
     playround(humanSelection,computerSelection);
     console.log(`Total score: human's ${humanScore} vs computer's ${computerScore}`);
 
