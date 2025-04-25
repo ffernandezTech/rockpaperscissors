@@ -36,18 +36,18 @@ function getComputerChoice(){
     
     
     
-    function getHumanChoice(){
+    // function getHumanChoice(){
     
-        //Prompt user for their input
-        let userInput = prompt('Enter Rock Paper or Scissor');
+    //     //Prompt user for their input
+    //     let userInput = prompt('Enter Rock Paper or Scissor');
     
-        //checking that the userInput has our desired value and its uppercase for later.
-        // console.log(userInput.toUpperCase());
+    //     //checking that the userInput has our desired value and its uppercase for later.
+    //     // console.log(userInput.toUpperCase());
     
-        //returning the value in caps
-        return(userInput.toUpperCase());
+    //     //returning the value in caps
+    //     return(userInput.toUpperCase());
     
-    }
+    // }
 
     
     // console.log(getComputerChoice());
@@ -110,7 +110,7 @@ function getComputerChoice(){
     
     
 
-   function playGame(){
+   function playGame(playerInput){
 
 
     
@@ -122,15 +122,15 @@ function getComputerChoice(){
     console.log(computerSelection);
     
     
-    // const humanSelection = getHumanChoice();
-    // console.log(humanSelection);
+    const humanSelection = playerInput;          //getHumanChoice(); old way of getting users input
+    console.log(humanSelection);
     
    
 
 
 
 
-    
+
     playround(humanSelection,computerSelection);
     console.log(`Total score: human's ${humanScore} vs computer's ${computerScore}`);
 
@@ -139,11 +139,11 @@ function getComputerChoice(){
 
    }
 
-
-playGame();
-playGame();
-playGame();
-playGame();
-playGame();
-
+   const btnRock = document.querySelector('.ROCK');
+//    console.log(btnRock.className);
+   
+   btnRock.addEventListener('click',() =>{
+    // console.log(btnRock.className);
     
+    playGame(btnRock.className);
+   });
