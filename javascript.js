@@ -133,24 +133,34 @@ function getComputerChoice(){
     
     }
     
+    let count = 1;
     function gameResults(){
         
         // console.log('HELLO FROM GAMERESULTS');
 
+       
+       
         const createFinalVictor = document.createElement('div');
         
+        if(humanScore===5 && count ===1)
+         {
+             createFinalVictor.textContent=`With a total score of ${humanScore} THE WINNERS HUMANS`;
+             mainContainer.appendChild(createFinalVictor);
+             count++;
+         }
+         else if(computerScore===5 && count ===1)
+         {
+             createFinalVictor.textContent=`With a total score of ${computerScore} THE WINNERS COMPUTERS`;
+             mainContainer.appendChild(createFinalVictor);
+             count++;
+         }
+     
        
 
-
-        if(humanScore===5)
-        {
-            createFinalVictor.textContent=`With a total score of ${humanScore} THE WINNERS HUMANS`;
-        }
-        else{
-            createFinalVictor.textContent=`With a total score of ${computerScore} THE WINNERS COMPUTERS`;
-        }
-    
-        mainContainer.appendChild(createFinalVictor);
+         
+ 
+         mainContainer.appendChild(createFINISHmsg);
+        
     }
     
 
@@ -184,54 +194,48 @@ function getComputerChoice(){
 
    }
 
+   btnRock.addEventListener('mouseup', (e)=>{
+
+    if(humanScore===5 || computerScore===5)
+        {
+          gameResults();
+        }
+
+
+   });
  
 
-   btnScissor.addEventListener('click',(e) =>{
+   btnScissor.addEventListener('mousedown',(e) =>{
     // console.log(btnRock.className);
     e.stopPropagation;
 
 
 
-    if(humanScore===5 || computerScore===5)
-    {
-        btnScissor.removeEventListener('click',gameResults());
-    }
-    else
-    {
+   
         playGame(btnScissor.className);
         console.log('HELLO');
-    }
+    
 
 
 
    
    });
 
-   btnPaper.addEventListener('click',(e) =>{
+   btnPaper.addEventListener('mousedown',(e) =>{
     // console.log(btnRock.className);
     e.stopPropagation;
-    if(humanScore===5 || computerScore===5)
-        {
-            btnScissor.removeEventListener('click',gameResults());
-        }
-        else
-        {
-            playGame(btnScissor.className);
-        }
     
+            playGame(btnScissor.className);
+        
    });
 
 
-   btnRock.addEventListener('click',(e) =>{
+   btnRock.addEventListener('mousedown',(e) =>{
     // console.log(btnRock.className);
     e.stopPropagation;
-    if(humanScore===5 || computerScore===5)
-        {
-            btnScissor.removeEventListener('click',gameResults());
-        }
-        else
-        {
+ 
             playGame(btnScissor.className);
-        }
-    
+        
    });
+
+
