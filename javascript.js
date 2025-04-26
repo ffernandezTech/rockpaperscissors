@@ -118,17 +118,11 @@ function getComputerChoice(){
            // console.log(`${humanChoice} does NOT beats ${computerChoice}`);
             computerScore++;
         }
-
-
-      
-
+       
         mainContainer.appendChild(createDIV_result);
-        
-        
-        
         createScore.textContent=`Total score: human's ${humanScore} vs computer's ${computerScore}`;
-    
         mainContainer.appendChild(createScore);
+    
     
         
        
@@ -139,7 +133,25 @@ function getComputerChoice(){
     
     }
     
+    function gameResults(){
+        
+        // console.log('HELLO FROM GAMERESULTS');
+
+        const createFinalVictor = document.createElement('div');
+        
+       
+
+
+        if(humanScore===5)
+        {
+            createFinalVictor.textContent=`With a total score of ${humanScore} THE WINNERS HUMANS`;
+        }
+        else{
+            createFinalVictor.textContent=`With a total score of ${computerScore} THE WINNERS COMPUTERS`;
+        }
     
+        mainContainer.appendChild(createFinalVictor);
+    }
     
 
    function playGame(playerInput){
@@ -177,18 +189,49 @@ function getComputerChoice(){
    btnScissor.addEventListener('click',(e) =>{
     // console.log(btnRock.className);
     e.stopPropagation;
-    playGame(btnScissor.className);
+
+
+
+    if(humanScore===5 || computerScore===5)
+    {
+        btnScissor.removeEventListener('click',gameResults());
+    }
+    else
+    {
+        playGame(btnScissor.className);
+        console.log('HELLO');
+    }
+
+
+
+   
    });
 
    btnPaper.addEventListener('click',(e) =>{
     // console.log(btnRock.className);
     e.stopPropagation;
-    playGame(btnPaper.className);
+    if(humanScore===5 || computerScore===5)
+        {
+            btnScissor.removeEventListener('click',gameResults());
+        }
+        else
+        {
+            playGame(btnScissor.className);
+        }
+    
    });
 
 
    btnRock.addEventListener('click',(e) =>{
     // console.log(btnRock.className);
     e.stopPropagation;
-    playGame(btnRock.className);
+    if(humanScore===5 || computerScore===5)
+        {
+            btnScissor.removeEventListener('click',gameResults());
+        }
+        else
+        {
+            playGame(btnScissor.className);
+        }
+    
    });
