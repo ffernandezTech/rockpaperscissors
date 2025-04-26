@@ -3,7 +3,17 @@
 // keep track of the score both each player
 //declared these variables here so that every function that needs them can use them
 let humanScore=0, computerScore=0;
+
+const createDIV_result = document.createElement('div');
+const mainContainer = document.querySelector('.container');
  
+const btnRock = document.querySelector('.ROCK');
+//    console.log(btnRock.className);
+const btnPaper = document.querySelector('.PAPER');
+
+const btnScissor = document.querySelector('.SCISSOR')
+const createScore = document.createElement('div');
+
 function getComputerChoice(){
 
     //Get a randomNum between 1-300. Because of 0 we add 1 so it's 1-300. Instead of 0-299(I think)
@@ -62,43 +72,65 @@ function getComputerChoice(){
         if(humanChoice === computerChoice)
         {
             // console.log('test');
-            console.log(`${humanChoice} vs ${computerChoice} is a draw!`);
+
+            createDIV_result.textContent=`${humanChoice} vs ${computerChoice} is a draw!`;
+            //console.log(`${humanChoice} vs ${computerChoice} is a draw!`);
         }
         else if(humanChoice==='ROCK' && computerChoice==='PAPER')
         {
-            console.log(`${humanChoice} does NOT beats ${computerChoice}`);
+
+            
+            createDIV_result.textContent=`${humanChoice} does NOT beats ${computerChoice}`;
+            //console.log(`${humanChoice} does NOT beats ${computerChoice}`);
             computerScore++;
         }
         else if(humanChoice==='ROCK' && computerChoice==='SCISSOR')
         {
-            console.log(`${humanChoice} beats ${computerChoice}`);
+            createDIV_result.textContent=`${humanChoice} beats ${computerChoice}`;
+            //console.log(`${humanChoice} beats ${computerChoice}`);
             humanScore++;
         }
         else if(humanChoice==='PAPER' && computerChoice==='ROCK')
         {
-            console.log(`${humanChoice} beats ${computerChoice}`);
+
+
+            createDIV_result.textContent=`${humanChoice} beats ${computerChoice}`;
+            //console.log(`${humanChoice} beats ${computerChoice}`);
             humanScore++;
         }
         else if(humanChoice==='PAPER' && computerChoice==='SCISSOR')
         {
             
-            console.log(`${humanChoice} does NOT beats ${computerChoice}`);
+            createDIV_result.textContent=`${humanChoice} does NOT beats ${computerChoice}`;
+           // console.log(`${humanChoice} does NOT beats ${computerChoice}`);
             computerScore++;
         }
         else if(humanChoice==='SCISSOR' && computerChoice==='PAPER')
         {
-            console.log(`${humanChoice} beats ${computerChoice}`);
+            createDIV_result.textContent=`${humanChoice} beats ${computerChoice}`;
+            //console.log(`${humanChoice} beats ${computerChoice}`);
             humanScore++;
         }
         else if(humanChoice==='SCISSOR' && computerChoice==='ROCK')
         {
             
-            console.log(`${humanChoice} does NOT beats ${computerChoice}`);
+            createDIV_result.textContent=`${humanChoice} does NOT beats ${computerChoice}`;
+           // console.log(`${humanChoice} does NOT beats ${computerChoice}`);
             computerScore++;
         }
 
 
+      
+
+        mainContainer.appendChild(createDIV_result);
+        
+        
+        
+        createScore.textContent=`Total score: human's ${humanScore} vs computer's ${computerScore}`;
     
+        mainContainer.appendChild(createScore);
+    
+        
        
        
 
@@ -132,6 +164,7 @@ function getComputerChoice(){
 
 
     playround(humanSelection,computerSelection);
+
     console.log(`Total score: human's ${humanScore} vs computer's ${computerScore}`);
 
     
@@ -139,11 +172,23 @@ function getComputerChoice(){
 
    }
 
-   const btnRock = document.querySelector('.ROCK');
-//    console.log(btnRock.className);
-   
-   btnRock.addEventListener('click',() =>{
+ 
+
+   btnScissor.addEventListener('click',(e) =>{
     // console.log(btnRock.className);
-    
+    e.stopPropagation;
+    playGame(btnScissor.className);
+   });
+
+   btnPaper.addEventListener('click',(e) =>{
+    // console.log(btnRock.className);
+    e.stopPropagation;
+    playGame(btnPaper.className);
+   });
+
+
+   btnRock.addEventListener('click',(e) =>{
+    // console.log(btnRock.className);
+    e.stopPropagation;
     playGame(btnRock.className);
    });
